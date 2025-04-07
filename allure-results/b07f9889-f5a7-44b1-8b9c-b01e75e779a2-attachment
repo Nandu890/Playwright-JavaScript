@@ -1,0 +1,102 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Demoblaze homepage test
+- Location: C:\Users\likhithap\WebstormProjects\PlaywrightAutomation\tests\AI-Test\example1.spec.js:3:1
+
+# Error details
+
+```
+Error: expect.toBeVisible: Error: strict mode violation: locator('a[href="index.html"]') resolved to 2 elements:
+    1) <a id="nava" href="index.html" class="navbar-brand">…</a> aka getByRole('link', { name: 'PRODUCT STORE' })
+    2) <a class="nav-link" href="index.html">…</a> aka getByRole('link', { name: 'Home (current)' })
+
+Call log:
+  - expect.toBeVisible with timeout 5000ms
+  - waiting for locator('a[href="index.html"]')
+
+    at C:\Users\likhithap\WebstormProjects\PlaywrightAutomation\tests\AI-Test\example1.spec.js:13:26
+```
+
+# Page snapshot
+
+```yaml
+- navigation:
+  - link "PRODUCT STORE":
+    - img
+    - text: PRODUCT STORE
+  - list:
+    - listitem:
+      - link "Home (current)"
+    - listitem:
+      - link "Contact"
+    - listitem:
+      - link "About us"
+    - listitem:
+      - link "Cart"
+    - listitem:
+      - link "Log in"
+    - listitem
+    - listitem
+    - listitem:
+      - link "Sign up"
+  - list:
+    - listitem
+    - listitem
+    - listitem
+  - img "First slide"
+  - button "Previous"
+  - button "Next"
+- link "CATEGORIES"
+- link "Phones"
+- link "Laptops"
+- link "Monitors"
+- list:
+  - listitem:
+    - button "Previous"
+  - listitem:
+    - button "Next"
+- heading "About Us" [level=4]
+- paragraph: We believe performance needs to be validated at every stage of the software development cycle and our open source compatible, massively scalable platform makes that a reality.
+- heading "Get in Touch" [level=4]
+- paragraph: "Address: 2390 El Camino Real"
+- paragraph: "Phone: +440 123456"
+- paragraph: "Email: demo@blazemeter.com"
+- heading "PRODUCT STORE" [level=4]:
+  - img
+  - text: PRODUCT STORE
+- contentinfo:
+  - paragraph: Copyright © Product Store 2017
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 | test('Demoblaze homepage test', async ({ page }) => {
+   4 |   // Go to the Demoblaze homepage
+   5 |   await page.goto('https://www.demoblaze.com/index.html');
+   6 |
+   7 |   // Check if the Demoblaze logo is visible
+   8 |   const logo = page.locator('a.navbar-brand');
+   9 |   await expect(logo).toBeVisible();
+  10 |
+  11 |   // Check if the "Home" link is visible and clickable
+  12 |   const homeLink = page.locator('a[href="index.html"]');
+> 13 |   await expect(homeLink).toBeVisible();
+     |                          ^ Error: expect.toBeVisible: Error: strict mode violation: locator('a[href="index.html"]') resolved to 2 elements:
+  14 |   await expect(homeLink).toBeEnabled();
+  15 |
+  16 |   // Click the "Home" link
+  17 |   await homeLink.click();
+  18 |
+  19 |   // Verify that the homepage is opened
+  20 |   await expect(page).toHaveURL('https://www.demoblaze.com/index.html');
+  21 | });
+```

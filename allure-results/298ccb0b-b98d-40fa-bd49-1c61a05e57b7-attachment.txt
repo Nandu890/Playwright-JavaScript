@@ -1,0 +1,51 @@
+Test failed: expect.toBeVisible: Error: strict mode violation: locator('a[href="index.html"]') resolved to 2 elements:
+    1) <a id="nava" href="index.html" class="navbar-brand">…</a> aka getByRole('link', { name: 'PRODUCT STORE' })
+    2) <a class="nav-link" href="index.html">…</a> aka getByRole('link', { name: 'Home (current)' })
+
+Call log:
+  - expect.toBeVisible with timeout 5000ms
+  - waiting for locator('a[href="index.html"]')
+
+    at C:\Users\likhithap\WebstormProjects\PlaywrightAutomation\tests\AI-Test\example1.spec.js:14:28 {
+  [Symbol(step)]: {
+    stepId: 'expect@10',
+    category: 'expect',
+    title: 'expect.toBeVisible',
+    params: undefined,
+    infectParentStepsWithError: undefined,
+    boxedStack: undefined,
+    location: {
+      file: 'C:\\Users\\likhithap\\WebstormProjects\\PlaywrightAutomation\\tests\\AI-Test\\example1.spec.js',
+      line: 14,
+      column: 28
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [TestInfoImpl],
+      _stepId: 'expect@10'
+    },
+    complete: [Function: complete],
+    endWallTime: 1743682024538,
+    error: {
+      message: `Error: expect.toBeVisible: Error: strict mode violation: locator('a[href="index.html"]') resolved to 2 elements:\n` +
+        `    1) <a id="nava" href="index.html" class="navbar-brand">…</a> aka getByRole('link', { name: 'PRODUCT STORE' })\n` +
+        `    2) <a class="nav-link" href="index.html">…</a> aka getByRole('link', { name: 'Home (current)' })\n` +
+        '\n' +
+        'Call log:\n' +
+        '\x1B[2m  - expect.toBeVisible with timeout 5000ms\x1B[22m\n' +
+        `\x1B[2m  - waiting for locator('a[href="index.html"]')\x1B[22m\n`,
+      stack: `Error: expect.toBeVisible: Error: strict mode violation: locator('a[href="index.html"]') resolved to 2 elements:\n` +
+        `    1) <a id="nava" href="index.html" class="navbar-brand">…</a> aka getByRole('link', { name: 'PRODUCT STORE' })\n` +
+        `    2) <a class="nav-link" href="index.html">…</a> aka getByRole('link', { name: 'Home (current)' })\n` +
+        '\n' +
+        'Call log:\n' +
+        '\x1B[2m  - expect.toBeVisible with timeout 5000ms\x1B[22m\n' +
+        `\x1B[2m  - waiting for locator('a[href="index.html"]')\x1B[22m\n` +
+        '\n' +
+        '    at C:\\Users\\likhithap\\WebstormProjects\\PlaywrightAutomation\\tests\\AI-Test\\example1.spec.js:14:28',
+      cause: undefined
+    }
+  }
+}

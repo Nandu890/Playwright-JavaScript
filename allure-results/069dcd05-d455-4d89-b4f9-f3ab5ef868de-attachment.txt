@@ -1,0 +1,74 @@
+Test failed: ExpectError: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+Locator: locator('img[alt="Trello"]')
+Expected: visible
+Received: <element(s) not found>
+Call log:
+  - expect.toBeVisible with timeout 5000ms
+  - waiting for locator('img[alt="Trello"]')
+
+    at C:\Users\likhithap\WebstormProjects\PlaywrightAutomation\tests\AI-Test\example2.spec.js:13:24 {
+  matcherResult: {
+    message: '\x1B[31mTimed out 5000ms waiting for \x1B[39m\x1B[2mexpect(\x1B[22m\x1B[31mlocator\x1B[39m\x1B[2m).\x1B[22mtoBeVisible\x1B[2m()\x1B[22m\n' +
+      '\n' +
+      `Locator: locator('img[alt="Trello"]')\n` +
+      'Expected: visible\n' +
+      'Received: <element(s) not found>\n' +
+      'Call log:\n' +
+      '\x1B[2m  - expect.toBeVisible with timeout 5000ms\x1B[22m\n' +
+      `\x1B[2m  - waiting for locator('img[alt="Trello"]')\x1B[22m\n`,
+    pass: false,
+    actual: '<element(s) not found>',
+    name: 'toBeVisible',
+    expected: 'visible',
+    log: [
+      '  - expect.toBeVisible with timeout 5000ms',
+      `  - waiting for locator('img[alt="Trello"]')`
+    ],
+    timeout: 5000
+  },
+  [Symbol(step)]: {
+    stepId: 'expect@10',
+    category: 'expect',
+    title: 'expect.toBeVisible',
+    params: undefined,
+    infectParentStepsWithError: undefined,
+    boxedStack: undefined,
+    location: {
+      file: 'C:\\Users\\likhithap\\WebstormProjects\\PlaywrightAutomation\\tests\\AI-Test\\example2.spec.js',
+      line: 13,
+      column: 24
+    },
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [TestInfoImpl],
+      _stepId: 'expect@10'
+    },
+    complete: [Function: complete],
+    endWallTime: 1743682178365,
+    error: {
+      message: 'Error: \x1B[31mTimed out 5000ms waiting for \x1B[39m\x1B[2mexpect(\x1B[22m\x1B[31mlocator\x1B[39m\x1B[2m).\x1B[22mtoBeVisible\x1B[2m()\x1B[22m\n' +
+        '\n' +
+        `Locator: locator('img[alt="Trello"]')\n` +
+        'Expected: visible\n' +
+        'Received: <element(s) not found>\n' +
+        'Call log:\n' +
+        '\x1B[2m  - expect.toBeVisible with timeout 5000ms\x1B[22m\n' +
+        `\x1B[2m  - waiting for locator('img[alt="Trello"]')\x1B[22m\n`,
+      stack: 'Error: \x1B[31mTimed out 5000ms waiting for \x1B[39m\x1B[2mexpect(\x1B[22m\x1B[31mlocator\x1B[39m\x1B[2m).\x1B[22mtoBeVisible\x1B[2m()\x1B[22m\n' +
+        '\n' +
+        `Locator: locator('img[alt="Trello"]')\n` +
+        'Expected: visible\n' +
+        'Received: <element(s) not found>\n' +
+        'Call log:\n' +
+        '\x1B[2m  - expect.toBeVisible with timeout 5000ms\x1B[22m\n' +
+        `\x1B[2m  - waiting for locator('img[alt="Trello"]')\x1B[22m\n` +
+        '\n' +
+        '    at C:\\Users\\likhithap\\WebstormProjects\\PlaywrightAutomation\\tests\\AI-Test\\example2.spec.js:13:24',
+      cause: undefined,
+      matcherResult: [Object]
+    }
+  }
+}

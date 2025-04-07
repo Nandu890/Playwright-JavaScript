@@ -1,0 +1,4 @@
+Successfully added Idea Planning card
+Successfully added Team Sprints card
+Successfully added Past Meetings card
+Successfully added Daily Research card

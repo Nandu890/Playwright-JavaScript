@@ -1,0 +1,60 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Counter buttons test
+- Location: C:\Users\likhithap\WebstormProjects\PlaywrightAutomation\tests\AI-Test\example1.spec.js:3:1
+
+# Error details
+
+```
+Error: page.goto: net::ERR_FILE_NOT_FOUND at file:///path/to/your/index.html
+Call log:
+  - navigating to "file:///path/to/your/index.html", waiting until "load"
+
+    at C:\Users\likhithap\WebstormProjects\PlaywrightAutomation\tests\AI-Test\example1.spec.js:5:14
+```
+
+# Page snapshot
+
+```yaml
+- heading "Your file couldn’t be accessed" [level=1]
+- paragraph: It may have been moved, edited, or deleted.
+- text: ERR_FILE_NOT_FOUND
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 | test('Counter buttons test', async ({ page }) => {
+   4 |   // Go to the local index.html file
+>  5 |   await page.goto('file:///path/to/your/index.html');
+     |              ^ Error: page.goto: net::ERR_FILE_NOT_FOUND at file:///path/to/your/index.html
+   6 |
+   7 |   // Check initial counter value
+   8 |   const counterValue = page.locator('#counter-value');
+   9 |   await expect(counterValue).toHaveText('0');
+  10 |
+  11 |   // Click the "+1" button and check the counter value
+  12 |   await page.click('#increaseByOne');
+  13 |   await expect(counterValue).toHaveText('1');
+  14 |
+  15 |   // Click the "+2" button and check the counter value
+  16 |   await page.click('#increaseByTwo');
+  17 |   await expect(counterValue).toHaveText('3');
+  18 |
+  19 |   // Click the "-1" button and check the counter value
+  20 |   await page.click('#decreaseByOne');
+  21 |   await expect(counterValue).toHaveText('2');
+  22 |
+  23 |   // Click the "-2" button and check the counter value
+  24 |   await page.click('#decreaseByTwo');
+  25 |   await expect(counterValue).toHaveText('0');
+  26 | });
+```

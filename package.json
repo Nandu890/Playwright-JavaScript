@@ -13,10 +13,13 @@
     "@playwright/test": "^1.51.0",
     "@types/node": "^22.10.7",
     "allure-playwright": "^3.2.0",
+    "auto-playwright": "^1.16.0",
     "prettier": "^3.3.1",
     "vite": "^5.1.6"
   },
   "dependencies": {
-    "dotenv": "^16.4.7"
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "playwright-stealth": "^0.0.1"
   }
 }

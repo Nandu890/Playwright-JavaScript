@@ -1,0 +1,61 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Use AI-generated username in Playwright
+- Location: C:\Users\likhithap\WebstormProjects\PlaywrightAutomation\tests\AI-Test\ollama-ai-2.spec.js:4:1
+
+# Error details
+
+```
+Error: page.fill: Test timeout of 900000ms exceeded.
+Call log:
+  - waiting for locator('#username')
+
+    at C:\Users\likhithap\WebstormProjects\PlaywrightAutomation\tests\AI-Test\ollama-ai-2.spec.js:18:14
+```
+
+# Page snapshot
+
+```yaml
+- heading "Example Domain" [level=1]
+- paragraph: This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.
+- paragraph:
+  - link "More information..."
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 | import axios from 'axios';
+   3 |
+   4 | test('Use AI-generated username in Playwright', async ({ page }) => {
+   5 |   await page.goto('https://example.com');
+   6 |
+   7 |   // Request AI-generated username
+   8 |   const response = await axios.post('http://127.0.0.1:11434/api/generate', {
+   9 |     model: "deepseek-r1:1.5b",
+  10 |     prompt: "Generate a random username",
+  11 |     stream: false
+  12 |   });
+  13 |
+  14 |   const aiUsername = response.data.response.trim();
+  15 |   console.log("Generated Username:", aiUsername);
+  16 |
+  17 |   // Fill the AI-generated text into a form input
+> 18 |   await page.fill('#username', aiUsername);
+     |              ^ Error: page.fill: Test timeout of 900000ms exceeded.
+  19 |
+  20 |   // Submit the form
+  21 |   await page.click('#submit-button');
+  22 |
+  23 |   // Verify the username appears on the next page
+  24 |   await expect(page.locator('#profile-username')).toContainText(aiUsername);
+  25 | });
+  26 |
+```

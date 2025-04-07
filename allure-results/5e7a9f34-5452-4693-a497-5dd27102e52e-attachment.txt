@@ -1,0 +1,1 @@
+AI Response:  Playwright is a Node.js library to automate Chromium, Firefox, and WebKit browsers with a single API. It allows testing web applications for functionality, performance, accessibility, and more across various environments from a single test codebase. It's open-source, maintained by Microsoft, and can be used for end-to-end testing, UI testing, and scraping websites.

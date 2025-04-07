@@ -1,0 +1,116 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Demoblaze homepage test
+- Location: C:\Users\likhithap\WebstormProjects\PlaywrightAutomation\tests\AI-Test\example1.spec.js:3:1
+
+# Error details
+
+```
+Error: expect.toBeVisible: Error: strict mode violation: locator('a') resolved to 15 elements:
+    1) <a id="nava" href="index.html" class="navbar-brand">…</a> aka getByRole('link', { name: 'PRODUCT STORE' })
+    2) <a class="nav-link" href="index.html">…</a> aka getByRole('link', { name: 'Home (current)' })
+    3) <a href="#" class="nav-link" data-toggle="modal" data-target="#exampleModal">Contact</a> aka getByRole('link', { name: 'Contact' })
+    4) <a href="#" class="nav-link" data-toggle="modal" data-target="#videoModal">About us</a> aka getByRole('link', { name: 'About us' })
+    5) <a id="cartur" class="nav-link" href="cart.html">Cart</a> aka getByRole('link', { name: 'Cart' })
+    6) <a href="#" id="login2" class="nav-link" data-toggle="modal" data-target="#logInModal">Log in</a> aka getByRole('link', { name: 'Log in' })
+    7) <a href="#" id="logout2" class="nav-link" onclick="logOut()">Log out</a> aka getByText('Log out')
+    8) <a href="#" id="nameofuser" class="nav-link"></a> aka locator('#nameofuser')
+    9) <a href="#" id="signin2" class="nav-link" data-toggle="modal" data-target="#signInModal">Sign up</a> aka getByRole('link', { name: 'Sign up' })
+    10) <a role="button" data-slide="prev" class="carousel-control-prev" href="#carouselExampleIndicators">…</a> aka locator('#carouselExampleIndicators').getByRole('button', { name: 'Previous' })
+    ...
+
+Call log:
+  - expect.toBeVisible with timeout 5000ms
+  - waiting for locator('a')
+
+    at C:\Users\likhithap\WebstormProjects\PlaywrightAutomation\tests\AI-Test\example1.spec.js:10:24
+```
+
+# Page snapshot
+
+```yaml
+- navigation:
+  - link "PRODUCT STORE":
+    - img
+    - text: PRODUCT STORE
+  - list:
+    - listitem:
+      - link "Home (current)"
+    - listitem:
+      - link "Contact"
+    - listitem:
+      - link "About us"
+    - listitem:
+      - link "Cart"
+    - listitem:
+      - link "Log in"
+    - listitem
+    - listitem
+    - listitem:
+      - link "Sign up"
+  - list:
+    - listitem
+    - listitem
+    - listitem
+  - img "First slide"
+  - button "Previous"
+  - button "Next"
+- link "CATEGORIES"
+- link "Phones"
+- link "Laptops"
+- link "Monitors"
+- list:
+  - listitem:
+    - button "Previous"
+  - listitem:
+    - button "Next"
+- heading "About Us" [level=4]
+- paragraph: We believe performance needs to be validated at every stage of the software development cycle and our open source compatible, massively scalable platform makes that a reality.
+- heading "Get in Touch" [level=4]
+- paragraph: "Address: 2390 El Camino Real"
+- paragraph: "Phone: +440 123456"
+- paragraph: "Email: demo@blazemeter.com"
+- heading "PRODUCT STORE" [level=4]:
+  - img
+  - text: PRODUCT STORE
+- contentinfo:
+  - paragraph: Copyright © Product Store 2017
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 | test('Demoblaze homepage test', async ({ page }) => {
+   4 |   try {
+   5 |     // Go to the Demoblaze homepage
+   6 |     await page.goto('https://www.demoblaze.com/index.html');
+   7 |
+   8 |     // Check if the Demoblaze logo is visible
+   9 |     const logo = page.locator('a');
+> 10 |     await expect(logo).toBeVisible();
+     |                        ^ Error: expect.toBeVisible: Error: strict mode violation: locator('a') resolved to 15 elements:
+  11 |
+  12 |     // Check if the "Home" link is visible and clickable
+  13 |     const homeLink = page.locator('a.nav-link:has-text("Home")');
+  14 |     await expect(homeLink).toBeVisible();
+  15 |     await expect(homeLink).toBeEnabled();
+  16 |
+  17 |     // Click the "Home" link
+  18 |     await homeLink.click();
+  19 |
+  20 |     // Verify that the homepage is opened
+  21 |     await expect(page).toHaveURL('https://www.demoblaze.com/index.html');
+  22 |   } catch (error) {
+  23 |     console.error('Test failed:', error);
+  24 |     throw error;
+  25 |   }
+  26 | });
+```

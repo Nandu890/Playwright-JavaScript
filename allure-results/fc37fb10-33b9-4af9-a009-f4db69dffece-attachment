@@ -1,0 +1,363 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Counter buttons test
+- Location: C:\Users\likhithap\WebstormProjects\PlaywrightAutomation\tests\AI-Test\example1.spec.js:3:1
+
+# Error details
+
+```
+Error: Timed out 5000ms waiting for expect(locator).toHaveText(expected)
+
+Locator: locator('#counter-value')
+Expected string: "0"
+Received: <element(s) not found>
+Call log:
+  - expect.toHaveText with timeout 5000ms
+  - waiting for locator('#counter-value')
+
+    at C:\Users\likhithap\WebstormProjects\PlaywrightAutomation\tests\AI-Test\example1.spec.js:9:30
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Navigate to main page":
+    - img
+  - navigation:
+    - 'button "Developer Tools: Open submenu"': Developer Tools
+    - 'button "Team Tools: Open submenu"': Team Tools
+    - 'button "Education: Open submenu"': Education
+    - 'button "Solutions: Open submenu"': Solutions
+    - 'button "Support: Open submenu"': Support
+    - 'button "Store: Open submenu"': Store
+  - button "Open search":
+    - img
+  - link "Navigate to profile":
+    - img
+  - link "Navigate to Store":
+    - img
+  - button "Open language selection":
+    - img
+- link "WebStorm"
+- link "JetBrains IDEs"
+- link "Coming in 2025.1"
+- link "What's New"
+- link "Features"
+- link "Learn"
+- link "Pricing"
+- link "Download"
+- banner:
+  - paragraph: WebStorm
+  - text: Free for non-commercial use
+  - heading "The JavaScript and TypeScript IDE" [level=1]
+  - img
+  - paragraph: Make development more productive and enjoyable.
+  - link "Download"
+  - button "Play video":
+    - img
+    - text: Watch video
+- banner:
+  - heading "Focus on your code. Let WebStorm do the rest." [level=2]
+  - heading "Ready to use out of the box" [level=3]
+  - paragraph: Get straight to coding without having to install and configure lots of plugins. WebStorm includes everything you need for JavaScript and TypeScript development right from the start. You can personalize it further with various plugins and settings.
+  - img
+  - paragraph: JavaScript
+  - img
+  - paragraph: TypeScript
+  - img
+  - paragraph: HTML
+  - img
+  - paragraph: CSS
+  - img
+  - paragraph: React
+  - img
+  - paragraph: Angular
+  - img
+  - paragraph: Vue
+  - img
+  - paragraph: Node.js
+  - img
+  - paragraph: SQL
+  - img
+  - paragraph: MongoDB
+  - img
+  - heading "Understands your codebase" [level=3]
+  - paragraph: WebStorm analyzes your entire project when you first open it. This enables fast navigation, advanced coding assistance, and safe refactoring – even in large projects.
+  - img
+  - heading "Makes complex tasks easy" [level=3]
+  - paragraph: Leave your most challenging and tedious tasks to WebStorm. From resolving Git merge conflicts to running and debugging tests, or writing repetitive code, get it done in just a few clicks.
+  - paragraph: Not sure which JetBrains IDE to choose?
+  - link "Compare JetBrains IDEs"
+- heading "What developers say about WebStorm" [level=2]
+- heading "Chau Tran" [level=3]
+- paragraph:
+  - link "via X (formerly Twitter)↗"
+- paragraph:
+  - text: I love Neovim for its speed and extensibility, but man, the confidence I have when I invoke "Refactor this..." or "Rename ..." in @WebStormIDE just hits differently.
+  - img "Thanks emoji": 🙏
+- heading "Prasad" [level=3]
+- paragraph:
+  - link "via X (formerly Twitter)↗"
+- paragraph: I love @jetbrains because WebStorm provides all the functionality for complex git workflow out of the box!! I can commit files, review changes, and resolve conflicts with a merge tool in the IDE. Wow!
+- heading "Gagan Deep Singh" [level=3]
+- paragraph:
+  - link "via X (formerly Twitter)↗"
+- paragraph: Switching to an IDE like JetBrains WebStorm or PyCharm Community Edition (Python) will make your life easier in the long run. Using an IDE enables you to work on a large codebase with millions of lines of code with the help of tons of features. Make your life easier!
+- heading "The Chi" [level=3]
+- paragraph:
+  - link "via X (formerly Twitter)↗"
+- paragraph: Unpopular opinion but since I switched to WebStorm from VSCode, my coding speed and searching prowess has more than doubled. €70 well spent. JetBrains know this IDE game. The git resolution feature is unmatched. The code search feature is unparalleled. I use the vscode key bindings so I didn’t go through the steep learning curve.
+- heading "impatienceisavirtue" [level=3]
+- paragraph:
+  - link "via X (formerly Twitter)↗"
+- paragraph: I’ve used both VS Code & WebStorm. I gladly pay for WebStorm because it works better in a number of ways. Everyone on my team has their choice. Everyone except one uses WebStorm, as well. We can’t all be taking crazy pills.
+- heading "Yorùbá Merlin" [level=3]
+- paragraph:
+  - link "via X (formerly Twitter)↗"
+- paragraph: Once you start using @WebStormIDE there's no going back. It's a 10 for me, very comfortable environment for development.
+- button [disabled]:
+  - img
+- text: 1/2
+- button:
+  - img
+- heading "Features" [level=2]
+- img
+- heading "Smart code editor" [level=3]
+- paragraph: WebStorm understands your project structure deeply and can assist you with every aspect of coding. It will autocomplete your code, detect and suggest fixes for errors and redundancies, and help you refactor code safely.
+- img
+- heading "Fast navigation and search" [level=3]
+- paragraph: Move through your code faster, regardless of how large your projects are. Jump to the definition of any function, method, variable, component, or class, and find its usages with no effort at all. Look for files, classes, or symbols, and review all the matches in one place.
+- img
+- heading "Integrated developer tools" [level=3]
+- paragraph: Access all of your essential tools in one place. Debug and test your client-side and Node.js apps, and work with Git and GitHub. Additionally, package managers, build tools, linters, Prettier, and, of course, a terminal are all available within the IDE.
+- text: Pro Feature
+- img
+- heading "AI Assistant" [level=3]
+- paragraph: Work faster with built-in AI features like code generation and context-aware smart chat. Let the IDE help you find the best way to refactor your code or generate commit messages and write documentation for you.
+- link "Buy AI Assistance"
+- img
+- heading "Collaborative and remote development" [level=3]
+- paragraph: Code together in real time and talk to others right in your IDE. Work on a project located in a remote development environment, which can be hosted on your own machine or in cloud solutions, such as Google Cloud Workstations or GitHub Codespaces.
+- img
+- heading "Customization" [level=3]
+- paragraph: Make WebStorm your own with different themes, fonts, and keymaps. You can also add extra functionality with hundreds of plugins from our marketplace.
+- link "Learn more about the features"
+- heading "What’s new in WebStorm 2024.3" [level=2]
+- heading "Built-in support for database tools and SQL" [level=3]
+- paragraph: Database tools and full SQL support, previously available through a paid plugin, are now bundled with WebStorm at no extra cost.
+- heading "Better AI-driven code completion" [level=3]
+- paragraph: We’ve improved code completion for JavaScript and TypeScript and added support for HTML and CSS.
+- heading "Quality improvements" [level=3]
+- paragraph:
+  - text: You’ll find a lot of small quality improvements in this update, from better support for projects in WSL to cleaner search results in Find in Files with
+  - code: node_modules
+  - text: excluded.
+- link "Discover all the new features"
+- heading "Join our community" [level=2]
+- paragraph: Teams all over the world use WebStorm and other JetBrains IDEs. Join them for a better developer experience.
+- img
+- img
+- img
+- img
+- img
+- img
+- img
+- img
+- img
+- paragraph: Proven compliance and security
+- paragraph: JetBrains tools adhere to industry-leading security standards, including SOC 2 certification, ensuring your organization’s data is protected and our products are compliant with global regulations.
+- link "Download"
+- heading "Tell me about new product features as they come out" [level=2]
+- textbox
+- text: I agree that my personal data will be processed for this purpose.
+- img
+- button "Subscribe"
+- link "View sample newsletter"
+- heading "Follow us" [level=3]
+- img
+- link "Community forum"
+- img
+- link "Bug and issue tracker"
+- img
+- link "WebStorm blog"
+- img
+- link "@WebStormIDE on X"
+- contentinfo:
+  - list:
+    - listitem:
+      - heading "Products" [level=2]
+      - list:
+        - listitem:
+          - link "JetBrains IDEs"
+        - listitem:
+          - link ".NET & Visual Studio"
+        - listitem:
+          - link "Team Tools"
+        - listitem:
+          - link "Plugins"
+        - listitem:
+          - link "Education"
+        - listitem:
+          - link "Languages"
+        - listitem:
+          - link "All products"
+    - listitem:
+      - heading "Solutions" [level=2]
+      - list:
+        - listitem:
+          - link "C++ Tools"
+        - listitem:
+          - link "Data Tools"
+        - listitem:
+          - link "DevOps"
+        - listitem:
+          - link "Game Development"
+        - listitem:
+          - link "Tools For Business"
+    - listitem:
+      - heading "Initiatives" [level=2]
+      - list:
+        - listitem:
+          - link "Kotlin"
+        - listitem:
+          - link "JetBrains Mono"
+        - listitem:
+          - link "JetBrains Research"
+        - listitem:
+          - link "Open Source Projects"
+    - listitem:
+      - heading "Community" [level=2]
+      - list:
+        - listitem:
+          - link "Academic Licensing"
+        - listitem:
+          - link "Open Source Partnerships"
+        - listitem:
+          - link "User Groups"
+        - listitem:
+          - link "Developer Recognition"
+        - listitem:
+          - link "Content Creators"
+    - listitem:
+      - heading "Resources" [level=2]
+      - list:
+        - listitem:
+          - link "Sales Support"
+        - listitem:
+          - link "Product Support"
+        - listitem:
+          - link "Licensing FAQ"
+        - listitem:
+          - link "Documentation"
+        - listitem:
+          - link "Early Access"
+        - listitem:
+          - link "Events and Livestreams"
+        - listitem:
+          - link "Newsletters"
+        - listitem:
+          - link "Industry Reports"
+        - listitem:
+          - link "Inspectopedia"
+        - listitem:
+          - link "Blog"
+        - listitem:
+          - link "Desktop Art"
+    - listitem:
+      - heading "Company" [level=2]
+      - list:
+        - listitem:
+          - link "About"
+        - listitem:
+          - link "Contacts"
+        - listitem:
+          - link "Careers"
+        - listitem:
+          - link "News"
+        - listitem:
+          - link "Customers & Awards"
+        - listitem:
+          - link "Our Commitment"
+        - listitem:
+          - link "Brand Assets"
+        - listitem:
+          - link "Partners and Resellers"
+        - listitem:
+          - link "Merchandise Store"
+        - listitem:
+          - link "Trust Center"
+  - link "JetBrains on Facebook":
+    - img
+  - link "JetBrains on X (formerly Twitter)":
+    - img
+  - link "JetBrains on LinkedIn":
+    - img
+  - link "JetBrains on YouTube":
+    - img
+  - link "JetBrains on Instagram":
+    - img
+  - link "JetBrains on TikTok":
+    - img
+  - link "JetBrains blog":
+    - img
+  - link "JetBrains RSS Feed":
+    - img
+  - link "JetBrains Merchandise Store":
+    - img
+  - button "India":
+    - img
+    - text: India
+  - button "English":
+    - img
+    - text: English
+  - link "Privacy & Security"
+  - link "Privacy Notice"
+  - link "Terms of Use"
+  - link "Attributions"
+  - link "Legal"
+  - link "Genuine Tools"
+  - link "Opt-Out"
+  - text: Copyright © 2000-2025
+  - link "JetBrains"
+  - text: s.r.o. Developed with drive and
+  - link "IntelliJ IDEA"
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 | test('Counter buttons test', async ({ page }) => {
+   4 |   // Go to the local index.html file
+   5 |   await page.goto('https://www.jetbrains.com/webstorm/');
+   6 |
+   7 |   // Check initial counter value
+   8 |   const counterValue = page.locator('#counter-value');
+>  9 |   await expect(counterValue).toHaveText('0');
+     |                              ^ Error: Timed out 5000ms waiting for expect(locator).toHaveText(expected)
+  10 |
+  11 |   // Click the "+1" button and check the counter value
+  12 |   await page.click('#increaseByOne');
+  13 |   await expect(counterValue).toHaveText('1');
+  14 |
+  15 |   // Click the "+2" button and check the counter value
+  16 |   await page.click('#increaseByTwo');
+  17 |   await expect(counterValue).toHaveText('3');
+  18 |
+  19 |   // Click the "-1" button and check the counter value
+  20 |   await page.click('#decreaseByOne');
+  21 |   await expect(counterValue).toHaveText('2');
+  22 |
+  23 |   // Click the "-2" button and check the counter value
+  24 |   await page.click('#decreaseByTwo');
+  25 |   await expect(counterValue).toHaveText('0');
+  26 | });
+```
