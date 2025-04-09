@@ -24,6 +24,13 @@ jobs:
         with:
           node-version: 18 #install latest node.js version.[long term support]
 
+      - name: secret and variable
+        run: |
+            echo "Secret1: ${{ secrets.NAME1 }}"
+            echo "Secret2: ${{ secrets.NAME2 }}"
+            echo "Variable1: ${{ ENV}}"
+    
+
       - name: Install Dependencies
         run: npm ci  # Faster and ensures dependencies match package-lock.json
 
