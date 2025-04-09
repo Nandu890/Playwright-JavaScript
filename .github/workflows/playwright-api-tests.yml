@@ -25,7 +25,11 @@ jobs:
           node-version: 18 #install latest node.js version.[long term support]
 
       - name: secret and variable
-        run: echo "NAME1 is ${{ secrets.NAME1 }}
+        run: |
+          echo "NAME1 is ${{ secrets.NAME1 }}"
+          echo "NAME2 is ${{ secrets.NAME2 }}"
+          echo "var is ${{ vars.ENV }}"
+
 
     
 
