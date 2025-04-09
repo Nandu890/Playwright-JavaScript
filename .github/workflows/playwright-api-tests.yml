@@ -13,12 +13,7 @@ on:
 
 jobs:
   test:
-    runs-on: windows-latest
-    env:
-      ENV: "stg"
-      NAME1: ${{ secrets.NAME1 }}
-      NAME2: ${{ secrets.NAME2 }}
-      
+    runs-on: windows-latest      
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4 #it will get the code from the working-directory: and it can be used in subsequent step.
@@ -29,10 +24,12 @@ jobs:
           node-version: 18 #install latest node.js version.[long term support]
 
       - name: secret and variable
+        env:
+          API_KEY: ${{ secrets.NAME }}
         run: |
-            echo "Secret1: $NAME1"
-            echo "Secret2: $NAME2"
-            echo "Variable1: $ENV"
+            echo Hello
+            echo "Secret1:$API_KEY"
+
     
 
       - name: Install Dependencies
