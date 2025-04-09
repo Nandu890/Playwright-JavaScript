@@ -14,7 +14,11 @@ on:
 jobs:
   test:
     runs-on: windows-latest
-
+    env:
+      ENV: "stg"
+      NAME1: ${{ secrets.NAME1 }}
+      NAME2: ${{ secrets.NAME2 }}
+      
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4 #it will get the code from the working-directory: and it can be used in subsequent step.
@@ -26,9 +30,9 @@ jobs:
 
       - name: secret and variable
         run: |
-            echo "Secret1: ${{ secrets.NAME1 }}"
-            echo "Secret2: ${{ secrets.NAME2 }}"
-            echo "Variable1: ${{ ENV}}"
+            echo "Secret1: $NAME1"
+            echo "Secret2: $NAME2"
+            echo "Variable1: $ENV"
     
 
       - name: Install Dependencies
